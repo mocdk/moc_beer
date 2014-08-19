@@ -43,4 +43,7 @@ class Tx_MocBeer_Domain_Model_Beer extends Tx_Extbase_DomainObject_AbstractEntit
 		return $this->name;
 	}
 
+	public function  getABV() {
+		return $this->alcoholByVolume;
+	}
 }

@@ -3,10 +3,10 @@
 $TCA['tx_mocbeer_domain_model_beer'] = array(
 	'ctrl' => $TCA['tx_mocbeer_domain_model_beer']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'hidden, name',
+		'showRecordFieldList' => 'hidden, name, alcohol_by_volume',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'hidden, name'),
+		'1' => array('showitem' => 'hidden, name, alcohol_by_volume'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -56,7 +56,17 @@ $TCA['tx_mocbeer_domain_model_beer'] = array(
 			'label' => 'Beer name',
 			'config' => array(
 				'type' => 'input',
+				'eval' => 'required'
 			),
 		),
+		'alcohol_by_volume' => array(
+				'exclude' => 0,
+				'label' => 'Alcohol by volume (abv)',
+				'config' => array(
+					'type' => 'input',
+					'eval' => 'double6, required'
+				),
+		),
+
 	)
 );

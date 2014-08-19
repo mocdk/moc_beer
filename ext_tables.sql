@@ -9,6 +9,7 @@ CREATE TABLE tx_mocbeer_domain_model_beer (
 	starttime int(11) unsigned DEFAULT '0' NOT NULL,
 	endtime int(11) unsigned DEFAULT '0' NOT NULL,
 	name varchar(255) DEFAULT '' NOT NULL,
+	alcohol_by_volume float(8,2) DEFAULT '0.00' NOT NULL,
 	PRIMARY KEY (uid),
 	KEY parent (pid)
 );
