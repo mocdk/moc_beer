@@ -2,8 +2,8 @@
 
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'Topdanmark - unittest demo extension',
-	'description' => 'Provides examples of unittests as a part of the material for a workshop.',
+	'title' => 'MOC - unittest demo extension',
+	'description' => 'Provides examples of unittests as a part of the material for a workshop on testing with TYPO3',
 	'category' => 'fe',
 	'shy' => 0,
 	'version' => '1.00',
