@@ -7,10 +7,10 @@ Tx_Extbase_Utility_Extension::configurePlugin(
 	$_EXTKEY,
 	'MocBeer',
 	array(
-        'Beer' => 'list, show',
+        'Beer' => 'list, show, new, create',
 	),
 	// non-cacheable actions
 	array(
-		'Beer' => 'list, show',
+		'Beer' => 'list, show, new, create',
 	)
 );

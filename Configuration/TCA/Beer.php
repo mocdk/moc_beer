@@ -60,12 +60,12 @@ $TCA['tx_mocbeer_domain_model_beer'] = array(
 			),
 		),
 		'alcohol_by_volume' => array(
-				'exclude' => 0,
-				'label' => 'Alcohol by volume (abv)',
-				'config' => array(
-					'type' => 'input',
-					'eval' => 'double6, required'
-				),
+			'exclude' => 0,
+			'label' => 'Alcohol by volume (abv)',
+			'config' => array(
+				'type' => 'input',
+				'eval' => 'double6, required'
+			),
 		),
 
 	)
