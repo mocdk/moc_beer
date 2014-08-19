@@ -23,6 +23,11 @@ class Tx_MocBeer_Domain_Model_Beer extends Tx_Extbase_DomainObject_AbstractEntit
 	protected $state = self::STATE_CLOSED;
 
 	/**
+	 * @var integer
+	 */
+	protected $isDummyRecord;
+
+	/**
 	 * @param float $alcoholByVolume
 	 * @return void
 	 */
@@ -74,6 +79,21 @@ class Tx_MocBeer_Domain_Model_Beer extends Tx_Extbase_DomainObject_AbstractEntit
 		$this->state = OPEN;
 
 		// @todo Call external webservice notifying someone that this particular beer is now open.
+	}
+
+	/**
+	 * @param int $isDummyRecord
+	 * @return void
+	 */
+	public function setIsDummyRecord($isDummyRecord) {
+		$this->isDummyRecord = $isDummyRecord;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getIsDummyRecord() {
+		return $this->isDummyRecord;
 	}
 
 }

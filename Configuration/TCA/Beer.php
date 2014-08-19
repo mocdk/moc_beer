@@ -67,6 +67,11 @@ $TCA['tx_mocbeer_domain_model_beer'] = array(
 				'eval' => 'double6, required'
 			),
 		),
-
+		'is_dummy_record' => array(
+			'exclude' => 0,
+			'config' => array (
+				'type' => 'passthrough'
+			)
+		)
 	)
 );

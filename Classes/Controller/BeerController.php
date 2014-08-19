@@ -45,6 +45,7 @@ class Tx_MocBeer_Controller_BeerController extends Tx_Extbase_MVC_Controller_Act
 	 */
 	public function createAction(Tx_MocBeer_Domain_Model_Beer $beer) {
 		$this->beerRepository->add($beer);
+		$this->flashMessageContainer->add('New beer created');
 		$this->redirect('list');
 	}
 
