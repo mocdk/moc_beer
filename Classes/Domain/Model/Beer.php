@@ -3,6 +3,10 @@
 
 class Tx_MocBeer_Domain_Model_Beer extends Tx_Extbase_DomainObject_AbstractEntity {
 
+	const STATE_CLOSED = 0;
+	const STATE_OPEN = 1;
+
+
 	/**
 	 * @var string
 	 */
@@ -12,6 +16,11 @@ class Tx_MocBeer_Domain_Model_Beer extends Tx_Extbase_DomainObject_AbstractEntit
 	 * @var float
 	 */
 	protected $alcoholByVolume;
+
+	/**
+	 * @var integer
+	 */
+	protected $state = self::STATE_CLOSED;
 
 	/**
 	 * @param float $alcoholByVolume
@@ -43,7 +52,28 @@ class Tx_MocBeer_Domain_Model_Beer extends Tx_Extbase_DomainObject_AbstractEntit
 		return $this->name;
 	}
 
-	public function  getABV() {
-		return $this->alcoholByVolume;
+	/**
+	 * Shorthand function for getAlcoholByVolume
+	 *
+	 * @return float
+	 */
+	public function getABV() {
+		return $this->getAlcoholByVolume();
 	}
+
+	/**
+	 * Method for opening a beer
+	 *
+	 * @throws Tx_MocBeer_Exception_BeerAlreadyOpenException
+	 * @return void
+	 */
+	public function open() {
+		if ($this->state === self::STATE_OPEN) {
+			throw new Tx_MocBeer_Exception_BeerAlreadyOpenException('This beer is already open');
+		}
+		$this->state = OPEN;
+
+		// @todo Call external webservice notifying someone that this particular beer is now open.
+	}
+
 }

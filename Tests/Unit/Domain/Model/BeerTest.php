@@ -33,4 +33,5 @@ class Tx_MocBeer_Domain_Model_BeerTest extends Tx_Extbase_Tests_Unit_BaseTestCas
 		$beer->_set('name', 'Lager');
 		$this->assertEquals('Lager', $beer->getName());
 	}
+
 }
